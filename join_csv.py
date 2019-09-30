@@ -100,7 +100,9 @@ for a in authors:
 		global_key = papers[a[0]][0]
 		conf_key = papers[a[0]][1]
 		c = conferences[(global_key, conf_key)]
-		
+		if (et[3] == ""):
+			print "sem sexo"
+			continue		
 		f_out.write('%s,%s,%s,%s,%s,%s,%s,%s,%s\n' % (a[0],et[2], et[3], p[0],p[1], c[4], c[5], c[6], c[7]) )
 
 f_out.close()			
