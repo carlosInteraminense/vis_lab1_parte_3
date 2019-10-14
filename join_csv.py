@@ -59,11 +59,11 @@ def split_ethnicity(et):
 		l0 = e[1]
 		l1=e[2]
 		l2=e[3]
-		
+		'''
 		l0 = aux(l0)
 		l1 = aux(l1)
 		l2 = aux(l2)
-
+		'''
 		gender = e[4]
 		if (gender == '\"-\"'): gender = ''
 		
