@@ -117,7 +117,7 @@ for a in authors:
 			print "sem sexo"
 			continue		
 		f_out.write('%s,%s,%s,%s,%s,%s,%s,%s,%s\n' % (a[0],et[2], et[3], p[0],p[1], c[4], c[5], c[6], c[7]) )
-		if (et[2] == 0): continue
+		if (et[2] == ""): continue
 		f_out_l2.write('%s,%s,%s,%s,%s,%s,%s,%s,%s\n' % (a[0],et[2], et[3], p[0],p[1], c[4], c[5], c[6], c[7]) )
 
 f_out.close()	
