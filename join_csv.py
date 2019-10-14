@@ -46,6 +46,12 @@ def split_conferences(l_conferences):
 		
 	return res
 
+def aux(x):
+	r = 0
+	if x != "":
+		r = 1
+	return r
+
 def split_ethnicity(et):
 	res = {}
 	for e in et:
@@ -53,8 +59,14 @@ def split_ethnicity(et):
 		l0 = e[1]
 		l1=e[2]
 		l2=e[3]
+		
+		l0 = aux(l0)
+		l1 = aux(l1)
+		l2 = aux(l2)
+
 		gender = e[4]
 		if (gender == '\"-\"'): gender = ''
+		
 		res[name] = (l0,l1,l2,gender)
 	return res
 
@@ -93,7 +105,7 @@ res = []
 f_out = open('out.csv', 'w')
 f_out.write('paper_key,l2,gender,global_key,conf_key,domain_1,domain_2,domain_3,domain_4\n')
 for a in authors:
-	et = ('','','','')
+	et = (0,0,0,0)
 	if (a[1] in ethnicity): et = ethnicity[a[1]]
 	if (a[0] in papers):
 		p = papers[a[0]]
