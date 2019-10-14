@@ -103,6 +103,7 @@ papers = split_papers(l_papers)
 
 res = []
 f_out = open('out.csv', 'w')
+f_out_l2 = open('out_l2.csv', 'w')
 f_out.write('paper_key,l2,gender,global_key,conf_key,domain_1,domain_2,domain_3,domain_4\n')
 for a in authors:
 	et = (0,0,0,0)
@@ -116,8 +117,11 @@ for a in authors:
 			print "sem sexo"
 			continue		
 		f_out.write('%s,%s,%s,%s,%s,%s,%s,%s,%s\n' % (a[0],et[2], et[3], p[0],p[1], c[4], c[5], c[6], c[7]) )
+		if (et[2] == 0): continue
+		f_out_l2.write('%s,%s,%s,%s,%s,%s,%s,%s,%s\n' % (a[0],et[2], et[3], p[0],p[1], c[4], c[5], c[6], c[7]) )
 
-f_out.close()			
+f_out.close()	
+f_out_l2.close()		
 	
 
 
