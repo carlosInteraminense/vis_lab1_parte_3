@@ -105,6 +105,7 @@ res = []
 f_out = open('out.csv', 'w')
 f_out_l2 = open('out_l2.csv', 'w')
 f_out.write('paper_key,l2,gender,global_key,conf_key,domain_1,domain_2,domain_3,domain_4\n')
+f_out_l2.write('paper_key,l2,gender,global_key,conf_key,domain_1,domain_2,domain_3,domain_4\n')
 for a in authors:
 	et = (0,0,0,0)
 	if (a[1] in ethnicity): et = ethnicity[a[1]]
