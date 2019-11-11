@@ -18,7 +18,6 @@ def get_num_h_num_m(l_cod, dom):
 		num_m = 0
 		line = line.split(';')
 		cod = line[0]
-		print cod
 		if (line[0] not in l_cod): continue
 		for i in range(63, 82):
 			num_h += int(line[i])
