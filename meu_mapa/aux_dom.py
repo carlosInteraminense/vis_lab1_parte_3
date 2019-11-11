@@ -18,13 +18,11 @@ def get_num_h_num_m(l_cod, dom):
 		num_m = 0
 		line = line.split(';')
 		cod = line[0]
-		print cod
 		if (line[0] not in l_cod): continue
 		for i in range(63, 82):
 			num_h += int(line[i])
 		for i in range(82, 101):
 			num_m += int(line[i])
-		print ('%d e %d' % (num_h, num_m))
 		if (num_h > num_m):
 			res[cod] = 'Homens'
 		elif (num_h < num_m):
@@ -54,7 +52,7 @@ l_cod = get_cod_from_geom(geom)
 
 res = get_num_h_num_m(l_cod, dom)
 
-out.write('Cod_setor;maior_parte;\n')
+out.write('Cod_setor,maior_parte\n')
 for cod in res:
-	out.write('%s;%s;\n' % (cod, res[cod]))
+	out.write('%s,%s\n' % (cod, res[cod]))
 out.close()
